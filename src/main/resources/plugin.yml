@@ -1,0 +1,50 @@
+name: SimpleEssentials
+version: '${project.version}'
+main: com.example.simpleessentials.SimpleEssentials
+api-version: '1.20'
+author: LordGamer TOP
+description: Simple gamemode, feed and heal commands for 1.20.1.
+
+commands:
+  gm0:
+    description: Survival mode (creative=0)
+    usage: /gm0 [player]
+    permission: simpleessentials.gamemode
+  gm1:
+    description: Creative mode
+    usage: /gm1 [player]
+    permission: simpleessentials.gamemode
+  gm2:
+    description: Adventure mode
+    usage: /gm2 [player]
+    permission: simpleessentials.gamemode
+  gm3:
+    description: Spectator mode
+    usage: /gm3 [player]
+    permission: simpleessentials.gamemode
+  feed:
+    description: Restore hunger
+    usage: /feed [player]
+    permission: simpleessentials.feed
+  heal:
+    description: Restore health
+    usage: /heal [player]
+    permission: simpleessentials.heal
+
+permissions:
+  simpleessentials.*:
+    description: Grants access to all SimpleEssentials commands
+    default: op
+    children:
+      simpleessentials.gamemode: true
+      simpleessentials.feed: true
+      simpleessentials.heal: true
+  simpleessentials.gamemode:
+    description: Allows changing game mode
+    default: op
+  simpleessentials.feed:
+    description: Allows using /feed
+    default: op
+  simpleessentials.heal:
+    description: Allows using /heal
+    default: op
